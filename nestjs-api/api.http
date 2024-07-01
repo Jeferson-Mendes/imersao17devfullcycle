@@ -1,0 +1,49 @@
+
+GET http://localhost:3000/products
+
+###
+
+POST http://localhost:3000/products
+Content-Type: application/json
+Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiam9obiIsImlhdCI6MTcxNDk5NzUwMiwiZXhwIjoxNzE0OTk3NTYyfQ.HZh7mIqBs6rhZWVBiV82D0K-XZ599ixX5bY4GlwRzbI"
+
+{
+    "name": "Product to test",
+    "description": "Product test description",
+    "image_url": "any url",
+    "price": 90
+}
+
+###
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username": "john",
+    "password": "john"
+}
+
+###
+
+GET http://localhost:3000/orders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiam9obiIsImlhdCI6MTcwNzA3MDI4NywiZXhwIjoxNzA3MDcwMzQ3fQ.J6p9l9QOxZA2VMBZtwJKd9eEJCGblELGTKG_eBaWEAc
+
+###
+
+POST http://localhost:3000/orders
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiam9obiIsImlhdCI6MTcwNzA3MzExNSwiZXhwIjoxNzA3MDczMTc1fQ.YUfPAPmnxY_vLACY4r6yjc2R32pUl7vcdcUpMsqX5IE
+
+{
+    "items": [
+        {
+            "product_id": "04c4353a-3f6d-4272-a8f2-44b82c05ecc0",
+             "quantity": 1
+        },
+        {
+            "product_id": "0afa7630-4fc1-4d69-beed-4f8f15becadc",
+             "quantity": 2
+        }
+    ],
+    "card_hash": "1234"
+}
